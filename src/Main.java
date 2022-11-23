@@ -13,16 +13,16 @@ public class Main {
         String top;
         int source = 0;
 
-        for(int i = 0; i <= n; i++){
-            for(int j = 0; j <= n; j++){
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j <= n; j++) {
                 list[i][j] = INF;
             }
         }
 
-        while(sc.hasNextLine()){
+        while (sc.hasNextLine()) {
             line = sc.nextLine();
             StringTokenizer tokenizer = new StringTokenizer(line, ",");
-            while(tokenizer.hasMoreTokens()){
+            while (tokenizer.hasMoreTokens()) {
                 top = tokenizer.nextToken();
                 StringTokenizer tokenizer2 = new StringTokenizer(top, " ");
                 int dest = Integer.parseInt(tokenizer2.nextToken());
@@ -33,15 +33,15 @@ public class Main {
         }
 
 
-        for(int i = 1; i <= n; i++){
-            for(int j = 1; j <= n; j++){
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
                 System.out.print(list[i][j] + " ");
             }
             System.out.println();
         }
 
 
-        kruskal k = new kruskal(n,INF);
+        kruskal k = new kruskal(n, INF);
         k.kruskalMTS(list);
         k.close();
     }
